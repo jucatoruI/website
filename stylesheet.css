@@ -10,7 +10,7 @@ body {
   font-family: OpenDyslexic;
 }
 
-.container {
+.center_container {
     width: 1760px;
     height: 950px;
 
@@ -21,7 +21,7 @@ body {
 
     display: flex;
     flex-wrap: wrap;  
-    background: linear-gradient(to right, rgb(187, 210, 197), rgb(83, 105, 118), rgb(41, 46, 73));
+    
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, .3);  
     border-radius: 5%;
 }
@@ -52,7 +52,6 @@ body {
 
 .photo{
 
-    background-image: url("assets/20241024_233926.png");
     box-shadow: 0 0 18px 3px rgba(0, 0, 0, 0.336);
     border-radius: 5%;
     filter:blur(1px);
@@ -70,7 +69,7 @@ body {
     cursor: grab;
 }
 
-.map{
+.map {
     /*look at thaaat, it takes you "anywhere" and "everywhere"*/
 
     grid-column: 7/8;
@@ -78,20 +77,16 @@ body {
 
     background-image: url("assets/map.png");
     background-size:contain;
-
-
-    transition: 1s ease-in-out;
+    
     z-index: 1;
     animation: apear 2s;
 
-    
 }
 
 /*needs tuning*/
 .map:hover{
     cursor: pointer;
 }
-
 
 .textbox{
    grid-column: 3/8;
@@ -103,30 +98,9 @@ body {
     font-size: 24px;
     animation: wave 2s ease-in-out infinite;
 }
-/*doesn't work yet
+
 .wavy-text span:nth-child(n+1) {
-    animation-delay: 0.2 + 0.2s ;
-}*/
-.wavy-text span:nth-child(1) {
-    animation-delay: 0s;
-}
-.wavy-text span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-.wavy-text span:nth-child(3) {
-    animation-delay: 0.4s;
-}
-.wavy-text span:nth-child(4) {
-    animation-delay: 0.6s;
-}
-.wavy-text span:nth-child(5) {
-    animation-delay: 0.7s;
-}
-.wavy-text span:nth-child(6) {
-    animation-delay: 0.8s;
-}
-.wavy-text span:nth-child(7) {
-    animation-delay: 0.9s;
+    animation-delay: calc(sibling-index()*0.1s);
 }
 
 h3{
@@ -153,92 +127,11 @@ p{
     animation: swivle 1s ease-in-out infinite;
 }
 
-/*doesn't work yet
 .swivling-text span:nth-child(n+1) {
-    animation-delay: 0.2 + 0.2s ;
-}*/
+    animation-delay: calc(sibling-index()*0.1s);
+}
 
-.swivling-text span:nth-child(1) {
-    animation-delay: 0s;
-}
-.swivling-text span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-.swivling-text span:nth-child(3) {
-    animation-delay: 0.4s;
-}
-.swivling-text span:nth-child(4) {
-    animation-delay: 0.6s;
-}
-.swivling-text span:nth-child(5) {
-    animation-delay: 0.8s;
-}
-.swivling-text span:nth-child(6) {
-    animation-delay: 0.10s;
-}
-.swivling-text span:nth-child(7) {
-    animation-delay: 0.12s;
-}
-.swivling-text span:nth-child(8) {
-    animation-delay: 0.14s;
-}
-.swivling-text span:nth-child(9) {
-    animation-delay: 0.16s;
-}
-.swivling-text span:nth-child(10) {
-    animation-delay: 0.18s;
-}
-.swivling-text span:nth-child(11) {
-    animation-delay: 0.20s;
-}
-.swivling-text span:nth-child(12) {
-    animation-delay: 0.22s;
-}
-.swivling-text span:nth-child(13) {
-    animation-delay: 0.24s;
-}
-.swivling-text span:nth-child(14) {
-    animation-delay: 0.26s;
-}
-.swivling-text span:nth-child(15) {
-    animation-delay: 0.28s;
-}
-.swivling-text span:nth-child(16) {
-    animation-delay: 0.30s;
-}
-.swivling-text span:nth-child(17) {
-    animation-delay: 0.32s;
-}
-.swivling-text span:nth-child(18) {
-    animation-delay: 0.34s;
-}
-.swivling-text span:nth-child(19) {
-    animation-delay: 0.36s;
-}
-.swivling-text span:nth-child(20) {
-    animation-delay: 0.38s;
-}
-.swivling-text span:nth-child(21) {
-    animation-delay: 0.40s;
-}
-.swivling-text span:nth-child(22) {
-    animation-delay: 0.42s;
-}
-.swivling-text span:nth-child(23) {
-    animation-delay: 0.44s;
-}
-.swivling-text span:nth-child(24) {
-    animation-delay: 0.46s;
-}
-.swivling-text span:nth-child(25) {
-    animation-delay: 0.48s;
-}
-.swivling-text span:nth-child(26) {
-    animation-delay: 0.50s;
-}
-.swivling-text span:nth-child(27) {
-    animation-delay: 0.52s;
-}
+
 /*.rightbox{
 
 }*/
@@ -251,6 +144,11 @@ p{
 @keyframes disapear {
 0%{opacity: 100%;} 
 100%{opacity:0%}
+}
+
+@keyframes scaledown {
+0%{scale: 100%;} 
+100%{scale:0%;}
 }
 
 @keyframes wave {
@@ -270,4 +168,3 @@ p{
 
     
 }
-
